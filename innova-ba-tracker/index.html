@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Innova BA Kariyer Takip</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <span class="logo-icon">📊</span>
+          <div>
+            <h1>Innova BA Kariyer Takip</h1>
+            <p class="subtitle">Kıdemli İş Analisti — Mülakat, Rutin & Yetkinlik</p>
+          </div>
+        </div>
+        <div class="header-stats">
+          <div class="stat-card">
+            <span class="stat-value" id="overallProgress">0%</span>
+            <span class="stat-label">Genel İlerleme</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value" id="streakCount">0</span>
+            <span class="stat-label">Günlük Seri</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <nav class="tabs" role="tablist">
+      <button class="tab active" data-tab="mulakat" role="tab">Mülakat Hazırlığı</button>
+      <button class="tab" data-tab="rutin" role="tab">Günlük Rutin</button>
+      <button class="tab" data-tab="yetkinlik" role="tab">Yetkinlik Gelişimi</button>
+      <button class="tab" data-tab="notlar" role="tab">Notlarım</button>
+    </nav>
+
+    <main class="content">
+      <!-- MÜLAKAT HAZIRLIĞI -->
+      <section id="mulakat" class="panel active">
+        <div class="panel-header">
+          <h2>Aranma & Mülakat Hazırlığı</h2>
+          <p>İnnova sizi aradığında ve mülakata girdiğinizde yapmanız gerekenler</p>
+        </div>
+
+        <div class="alert alert-info">
+          <strong>İnnova mülakat akışı:</strong> İK görüşmesi → Teknik mülakat → (bazen) online test (İngilizce / genel yetenek) → Teklif
+        </div>
+
+        <div class="phase-grid">
+          <div class="phase-card">
+            <h3>📞 Telefon Geldiğinde</h3>
+            <ul class="checklist" data-group="telefon"></ul>
+          </div>
+          <div class="phase-card">
+            <h3>🎯 İK Görüşmesi Öncesi</h3>
+            <ul class="checklist" data-group="ik-oncesi"></ul>
+          </div>
+          <div class="phase-card">
+            <h3>💼 Teknik Mülakat Hazırlığı</h3>
+            <ul class="checklist" data-group="teknik-hazirlik"></ul>
+          </div>
+          <div class="phase-card">
+            <h3>✅ Mülakat Günü</h3>
+            <ul class="checklist" data-group="mulakat-gunu"></ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>STAR Yöntemi — Hazır Cevaplarınız</h3>
+          <p class="hint">Her senaryo için Durum, Görev, Eylem, Sonuç formatında 2-3 cümle yazın.</p>
+          <div class="star-grid" id="starScenarios"></div>
+        </div>
+
+        <div class="card">
+          <h3>Sık Sorulan Mülakat Soruları</h3>
+          <div class="accordion" id="interviewQuestions"></div>
+        </div>
+      </section>
+
+      <!-- GÜNLÜK RUTİN -->
+      <section id="rutin" class="panel">
+        <div class="panel-header">
+          <h2>İşe Başlayınca Günlük Rutin</h2>
+          <p id="todayLabel"></p>
+        </div>
+
+        <div class="routine-layout">
+          <div class="routine-block">
+            <h3>🌅 Sabah (09:00 – 10:30)</h3>
+            <ul class="checklist daily" data-group="sabah"></ul>
+          </div>
+          <div class="routine-block">
+            <h3>☀️ Öğle (10:30 – 13:00)</h3>
+            <ul class="checklist daily" data-group="ogle"></ul>
+          </div>
+          <div class="routine-block">
+            <h3>🌤️ Öğleden Sonra (14:00 – 17:00)</h3>
+            <ul class="checklist daily" data-group="ogleden-sonra"></ul>
+          </div>
+          <div class="routine-block">
+            <h3>🌆 Gün Sonu (17:00 – 18:00)</h3>
+            <ul class="checklist daily" data-group="gun-sonu"></ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Haftalık Odak Alanları</h3>
+          <div class="week-focus" id="weekFocus"></div>
+        </div>
+
+        <button class="btn btn-secondary" id="resetDaily">Bugünkü Rutini Sıfırla</button>
+        <button class="btn btn-primary" id="completeDay">Günü Tamamla ✓</button>
+      </section>
+
+      <!-- YETKİNLİK GELİŞİMİ -->
+      <section id="yetkinlik" class="panel">
+        <div class="panel-header">
+          <h2>Yetkinlik & Program Gelişimi</h2>
+          <p>İnnova kıdemli iş analisti için öncelikli konular</p>
+        </div>
+
+        <div class="skill-filters">
+          <button class="filter-btn active" data-filter="all">Tümü</button>
+          <button class="filter-btn" data-filter="kritik">Kritik</button>
+          <button class="filter-btn" data-filter="onemli">Önemli</button>
+          <button class="filter-btn" data-filter="ileri">İleri Seviye</button>
+        </div>
+
+        <div class="skills-grid" id="skillsGrid"></div>
+
+        <div class="card">
+          <h3>Öğrenme Kaynakları</h3>
+          <div class="resources-list" id="resourcesList"></div>
+        </div>
+      </section>
+
+      <!-- NOTLAR -->
+      <section id="notlar" class="panel">
+        <div class="panel-header">
+          <h2>Kişisel Notlarım</h2>
+          <p>Mülakat notları, proje fikirleri ve gelişim hedefleriniz</p>
+        </div>
+
+        <div class="notes-toolbar">
+          <select id="noteCategory">
+            <option value="mulakat">Mülakat</option>
+            <option value="proje">Proje</option>
+            <option value="ogrenme">Öğrenme</option>
+            <option value="genel">Genel</option>
+          </select>
+          <input type="text" id="noteTitle" placeholder="Not başlığı...">
+        </div>
+        <textarea id="noteContent" placeholder="Notunuzu buraya yazın..." rows="5"></textarea>
+        <button class="btn btn-primary" id="addNote">Not Ekle</button>
+
+        <div class="notes-list" id="notesList"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Verileriniz tarayıcınızda saklanır — hiçbir sunucuya gönderilmez.</p>
+    </footer>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
