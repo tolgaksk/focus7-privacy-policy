@@ -33,7 +33,10 @@ function updateStats() {
 }
 
 function getAllCheckIds() {
-  const groups = ['telefon', 'ik-oncesi', 'teknik-hazirlik', 'mulakat-gunu'];
+  const groups = [
+    'telefon', 'ik-oncesi', 'teknik-hazirlik', 'mulakat-gunu',
+    'temelYetkinlikler', 'tercihYetkinlikler', 'sorumluluklar',
+  ];
   return groups.flatMap(g => APP_DATA[g].map(item => item.id));
 }
 
@@ -58,6 +61,9 @@ function renderChecklists() {
     'ik-oncesi': APP_DATA['ik-oncesi'],
     'teknik-hazirlik': APP_DATA['teknik-hazirlik'],
     'mulakat-gunu': APP_DATA['mulakat-gunu'],
+    temelYetkinlikler: APP_DATA.temelYetkinlikler,
+    tercihYetkinlikler: APP_DATA.tercihYetkinlikler,
+    sorumluluklar: APP_DATA.sorumluluklar,
     sabah: APP_DATA.sabah,
     ogle: APP_DATA.ogle,
     'ogleden-sonra': APP_DATA['ogleden-sonra'],
@@ -190,6 +196,17 @@ function renderSkills(filter = 'all') {
       renderSkills(filter);
     });
   });
+}
+
+function renderGlossary() {
+  const container = document.getElementById('glossary');
+  if (!container || !APP_DATA.glossary) return;
+  container.innerHTML = APP_DATA.glossary.map(g => `
+    <div class="glossary-item">
+      <strong>${g.term}</strong>
+      <span>${g.def}</span>
+    </div>
+  `).join('');
 }
 
 function renderResources() {
@@ -325,6 +342,7 @@ function init() {
   renderWeekFocus();
   renderSkills();
   renderResources();
+  renderGlossary();
   renderNotes();
   initNotes();
   initDailyActions();

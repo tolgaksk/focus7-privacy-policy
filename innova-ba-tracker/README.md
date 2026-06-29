@@ -1,35 +1,32 @@
-# Innova BA Kariyer Takip
+# Innova Kıdemli İş Analisti — EBYS/DYS Takip
 
-Kıdemli İş Analisti pozisyonu için mülakat hazırlığı, günlük iş rutini ve yetkinlik gelişimini takip eden kişisel uygulama.
+EBYS, DYS, E-İmza ve KEP odaklı Kıdemli İş Analisti pozisyonu için mülakat hazırlığı, günlük rutin ve yetkinlik gelişim takip uygulaması.
 
 ## Özellikler
 
-- **Mülakat Hazırlığı** — Telefon, İK ve teknik mülakat kontrol listeleri
-- **STAR Cevapları** — Senaryo bazlı mülakat cevaplarınızı kaydedin
-- **Günlük Rutin** — İşe başlayınca sabah/öğle/akşam rutin takibi
-- **Yetkinlik Gelişimi** — 12 yetkinlik alanı, seviye takibi ve kaynaklar
+- **Mülakat Hazırlığı** — EBYS/DYS/E-İmza odaklı kontrol listeleri, STAR senaryoları, domain mülakat soruları
+- **İlan & Görevler** — Aranan temel/tercih yetkinlikler, sorumluluklar, terimler sözlüğü
+- **Günlük Rutin** — EBYS analist iş rutini (GTD, BPMN, UAT, entegrasyon)
+- **Yetkinlik Gelişimi** — 15 yetkinlik alanı (EBYS, DYS, E-İmza, KEP, BPMN, UML, GTD, SQL, UAT...)
 - **Kişisel Notlar** — Mülakat, proje ve öğrenme notları
 
 ## Kullanım
-
-Tarayıcıda `index.html` dosyasını açın:
 
 ```bash
 cd innova-ba-tracker
 python3 -m http.server 8080
 ```
 
-Ardından http://localhost:8080 adresine gidin.
+http://localhost:8080 adresine gidin. Veya `index.html` dosyasını doğrudan tarayıcıda açın.
 
-Veriler tarayıcınızın localStorage'ında saklanır; sunucuya gönderilmez.
+Veriler tarayıcınızın localStorage'ında saklanır.
 
-## Dosya Yapısı
+## İlan Kapsamı
 
-```
-innova-ba-tracker/
-├── index.html   # Ana uygulama
-├── styles.css   # Stiller
-├── data.js      # İçerik ve veri
-├── app.js       # Uygulama mantığı
-└── README.md
-```
+| Alan | Konular |
+|------|---------|
+| Domain | EBYS, DYS, E-İmza, KEP entegrasyonları |
+| Dokümantasyon | GTD, Use Case, User Story, iş kuralları |
+| Modelleme | BPMN, UML (Use Case, Activity, Sequence) |
+| Araçlar | Jira, Confluence, Figma/Balsamiq, SQL |
+| Süreç | UAT yönetimi, kullanıcı eğitimi, canlıya geçiş |

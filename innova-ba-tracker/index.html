@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Innova BA Kariyer Takip</title>
+  <title>Innova Kıdemli İş Analisti — EBYS/DYS Takip</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,8 +13,8 @@
         <div class="logo">
           <span class="logo-icon">📊</span>
           <div>
-            <h1>Innova BA Kariyer Takip</h1>
-            <p class="subtitle">Kıdemli İş Analisti — Mülakat, Rutin & Yetkinlik</p>
+            <h1>Innova Kıdemli İş Analisti</h1>
+            <p class="subtitle">EBYS · DYS · E-İmza · KEP — Mülakat, Rutin & Yetkinlik</p>
           </div>
         </div>
         <div class="header-stats">
@@ -31,9 +31,10 @@
     </header>
 
     <nav class="tabs" role="tablist">
-      <button class="tab active" data-tab="mulakat" role="tab">Mülakat Hazırlığı</button>
+      <button class="tab active" data-tab="mulakat" role="tab">Mülakat</button>
+      <button class="tab" data-tab="ilan" role="tab">İlan & Görevler</button>
       <button class="tab" data-tab="rutin" role="tab">Günlük Rutin</button>
-      <button class="tab" data-tab="yetkinlik" role="tab">Yetkinlik Gelişimi</button>
+      <button class="tab" data-tab="yetkinlik" role="tab">Yetkinlikler</button>
       <button class="tab" data-tab="notlar" role="tab">Notlarım</button>
     </nav>
 
@@ -42,11 +43,11 @@
       <section id="mulakat" class="panel active">
         <div class="panel-header">
           <h2>Aranma & Mülakat Hazırlığı</h2>
-          <p>İnnova sizi aradığında ve mülakata girdiğinizde yapmanız gerekenler</p>
+          <p>EBYS/DYS/E-İmza pozisyonu için mülakat hazırlığı</p>
         </div>
 
         <div class="alert alert-info">
-          <strong>İnnova mülakat akışı:</strong> İK görüşmesi → Teknik mülakat → (bazen) online test (İngilizce / genel yetenek) → Teklif
+          <strong>İlan özeti:</strong> 3+ yıl EBYS, DYS, E-İmza deneyimi · KEP entegrasyonları · BPMN/UML · GTD · UAT · Jira/Confluence
         </div>
 
         <div class="phase-grid">
@@ -77,6 +78,36 @@
         <div class="card">
           <h3>Sık Sorulan Mülakat Soruları</h3>
           <div class="accordion" id="interviewQuestions"></div>
+        </div>
+      </section>
+
+      <!-- İLAN & GÖREVLER -->
+      <section id="ilan" class="panel">
+        <div class="panel-header">
+          <h2>İlan Detayı & Sorumluluklar</h2>
+          <p>Aranan yetkinlikler ve pozisyon sorumlulukları — hazırlık takibi</p>
+        </div>
+
+        <div class="phase-grid">
+          <div class="phase-card">
+            <h3>✅ Aranan Temel Yetkinlikler</h3>
+            <ul class="checklist" data-group="temelYetkinlikler"></ul>
+          </div>
+          <div class="phase-card">
+            <h3>⭐ Tercih Sebebi Yetkinlikler</h3>
+            <ul class="checklist" data-group="tercihYetkinlikler"></ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>📋 Başlıca Sorumluluklar</h3>
+          <p class="hint">İşe başladığınızda bu görevleri üstleneceksiniz — her birine hazır olduğunuzu işaretleyin.</p>
+          <ul class="checklist" data-group="sorumluluklar"></ul>
+        </div>
+
+        <div class="card glossary-card">
+          <h3>📖 Terimler Sözlüğü</h3>
+          <div class="glossary" id="glossary"></div>
         </div>
       </section>
 
@@ -119,14 +150,14 @@
       <section id="yetkinlik" class="panel">
         <div class="panel-header">
           <h2>Yetkinlik & Program Gelişimi</h2>
-          <p>İnnova kıdemli iş analisti için öncelikli konular</p>
+          <p>EBYS, DYS, E-İmza, KEP ve analiz yetkinlikleri</p>
         </div>
 
         <div class="skill-filters">
           <button class="filter-btn active" data-filter="all">Tümü</button>
           <button class="filter-btn" data-filter="kritik">Kritik</button>
           <button class="filter-btn" data-filter="onemli">Önemli</button>
-          <button class="filter-btn" data-filter="ileri">İleri Seviye</button>
+          <button class="filter-btn" data-filter="tercih">Tercih Sebebi</button>
         </div>
 
         <div class="skills-grid" id="skillsGrid"></div>
